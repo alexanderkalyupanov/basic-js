@@ -27,7 +27,7 @@ function transform(arr) {
         i++;
         break;
       case "--discard-prev":
-        if (result.length > 0) {
+        if (result.length > 0 && arr[i - 1] !== "--discard-next") {
           result.pop();
         }
         break;
@@ -37,7 +37,7 @@ function transform(arr) {
         }
         break;
       case "--double-prev":
-        if (result.length > 0) {
+        if (result.length > 0 && arr[i - 1] !== "--discard-next") {
           result.push(result[result.length - 1])
         }
         break;
